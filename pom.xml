@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.stanislav-mohylei-MDTU-VOL</groupId>
+    <groupId>io.github.stanislav-mohylei-MDTU-VOL</groupId>
     <artifactId>serenity-reportportal-integration</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
@@ -22,7 +22,7 @@
     <developers>
         <developer>
             <name>Stanislav Mohylei</name>
-            <email>luksstas@ukr.net</email>
+            <email>jira.mdtuvolcp@gmail.com</email>
             <organizationUrl>https://github.com/stanislav-mohylei-MDTU-VOL</organizationUrl>
         </developer>
     </developers>
