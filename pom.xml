@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.invictum</groupId>
+    <groupId>com.github.stanislav-mohylei-MDTU-VOL</groupId>
     <artifactId>serenity-reportportal-integration</artifactId>
-    <version>1.5.9-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <url>https://github.com/Invictum/serenity-reportportal-integration</url>
+    <url>https://github.com/stanislav-mohylei-MDTU-VOL/serenity-reportportal-integration</url>
     <description>Serenity TAF integration with Report Portal</description>
 
     <licenses>
@@ -21,16 +21,16 @@
 
     <developers>
         <developer>
-            <name>Yaroslav Yershov</name>
-            <email>zim182@gmail.com</email>
-            <organizationUrl>https://github.com/Invictum</organizationUrl>
+            <name>Stanislav Mohylei</name>
+            <email>luksstas@ukr.net</email>
+            <organizationUrl>https://github.com/stanislav-mohylei-MDTU-VOL</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:Invictum/serenity-reportportal-integration.git</connection>
-        <developerConnection>scm:git:git@github.com:Invictum/serenity-reportportal-integration.git</developerConnection>
-        <url>git@github.com:Invictum/serenity-reportportal-integration.git</url>
+        <connection>scm:git:git@github.com:stanislav-mohylei-MDTU-VOL/serenity-reportportal-integration.git</connection>
+        <developerConnection>scm:git:git@github.com:stanislav-mohylei-MDTU-VOL/serenity-reportportal-integration.git</developerConnection>
+        <url>git@github.com:stanislav-mohylei-MDTU-VOL/serenity-reportportal-integration.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
-            <version>2.3.4</version>
+            <version>3.6.0</version>
         </dependency>
         <dependency>
             <groupId>com.epam.reportportal</groupId>
@@ -66,6 +66,24 @@
             <artifactId>mockito-core</artifactId>
             <version>3.0.0</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.5</version>
         </dependency>
     </dependencies>
 

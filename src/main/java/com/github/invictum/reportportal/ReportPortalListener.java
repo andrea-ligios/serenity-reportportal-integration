@@ -6,12 +6,15 @@ import com.google.inject.Inject;
 import net.thucydides.core.model.DataTable;
 import net.thucydides.core.model.Story;
 import net.thucydides.core.model.TestOutcome;
+import net.thucydides.core.screenshots.ScreenshotAndHtmlSource;
 import net.thucydides.core.steps.ExecutedStepDescription;
 import net.thucydides.core.steps.StepFailure;
 import net.thucydides.core.steps.StepListener;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 import org.openqa.selenium.logging.Logs;
 
+import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.Map;
 
 public class ReportPortalListener implements StepListener {
@@ -46,7 +49,26 @@ public class ReportPortalListener implements StepListener {
         // Not used by listener
     }
 
+    public void testStarted(String s, String s1, ZonedDateTime zonedDateTime) {
+
+    }
+
+    @Override
     public void testFinished(TestOutcome result) {
+        TestRecorder recorder = TestRecorder.forTest(result);
+        recorder.record(result);
+        logStorage.clean();
+    }
+
+    @Override
+    public void testFinished(TestOutcome result, boolean isInDataDrivenTest) {
+        TestRecorder recorder = TestRecorder.forTest(result);
+        recorder.record(result);
+        logStorage.clean();
+    }
+
+    @Override
+    public void testFinished(TestOutcome result, boolean b, ZonedDateTime zonedDateTime) {
         TestRecorder recorder = TestRecorder.forTest(result);
         recorder.record(result);
         logStorage.clean();
@@ -88,8 +110,14 @@ public class ReportPortalListener implements StepListener {
         harvestDriverLogs();
     }
 
-    public void testFailed(TestOutcome testOutcome, Throwable cause) {
-        // Not used by listener
+    public void stepFinished(List<ScreenshotAndHtmlSource> list) {
+
+    }
+
+    public void testFailed(TestOutcome result, Throwable cause) {
+        TestRecorder recorder = TestRecorder.forTest(result);
+        recorder.record(result);
+        logStorage.clean();
     }
 
     public void testIgnored() {
@@ -98,6 +126,10 @@ public class ReportPortalListener implements StepListener {
 
     public void testSkipped() {
         // Not used by listener
+    }
+
+    public void testAborted() {
+        StepListener.super.testAborted();
     }
 
     public void testPending() {
@@ -124,6 +156,10 @@ public class ReportPortalListener implements StepListener {
         // Not used by listener
     }
 
+    public void exampleStarted(Map<String, String> data, String exampleName) {
+        StepListener.super.exampleStarted(data, exampleName);
+    }
+
     public void exampleFinished() {
         // Not used by listener
     }
@@ -134,6 +170,9 @@ public class ReportPortalListener implements StepListener {
 
     public void testRunFinished() {
         // Not used by listener
+    }
+
+    public void takeScreenshots(List<ScreenshotAndHtmlSource> list) {
     }
 
     private void harvestDriverLogs() {

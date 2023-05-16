@@ -4,6 +4,10 @@
 
 Serenity integration with Report Portal
 =======================================
+Module is fork of https://github.com/Invictum/serenity-reportportal-integration
+
+Integrated with serenity-bdd version 3.6.0
+Supports parallelization reporting for cucumber-junit5
 
 Module allows to report Serenity powered tests to [reportportal.io](http://reportportal.io) server. Adds additional reporting to Serenity based test automation frameworks.
 
@@ -50,7 +54,7 @@ Edit project's `pom.xml` file
 <dependency>
    <groupId>com.github.invictum</groupId>
    <artifactId>serenity-reportportal-integration</artifactId>
-   <version>1.5.7</version>
+   <version>1.5.9.1-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -61,7 +65,7 @@ Edit project's `pom.xml` file
 
 Edit your project `build.gradle` file
 ```
-compile: 'com.github.invictum:serenity-reportportal-integration:1.5.7'
+compile: 'com.github.invictum:serenity-reportportal-integration:1.5.9.1-SNAPSHOT'
 ```
 
 At this point setup of integration is done. The only thing you have to do is to configure Report Portal itself. In general it means just adding of `reportportal.properties` file to you project tests root. Minimal properties example is described below:
@@ -105,7 +109,7 @@ Then define snapshot artifact version in dependencies
 <dependency>
     <groupId>com.github.invictum</groupId>
     <artifactId>serenity-reportportal-integration</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.5.9.1-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -122,7 +126,7 @@ repositories {
 
 Add snapshots artifact in dependencies
 ```
-compile: 'com.github.invictum:serenity-reportportal-integration:1.0.0-SNAPSHOT'
+compile: 'com.github.invictum:serenity-reportportal-integration:1.5.9.1-SNAPSHOT'
 ```
 
 #### Native Serenity reporting
@@ -379,6 +383,7 @@ Important release notes are described below. Use [releases](https://github.com/I
 1.3.0          | Minor version updated due to log units approach rework
 1.4.0 - 1.4.3  | Minor version update: removed tree handler, refactored to support DDT for BDD
 1.5.0+         | Minor version update due RP v5 release
+1.5.9.1        | Updated serenity-bdd up to 3.6.0 for supporting parallel reporting
 
 ## Limitations
 
